@@ -30,6 +30,8 @@ SECRET_KEY = 'django-insecure-3_-(z4y@fb(07x_hirqzenh=b^wsu4$4bhk18=w*+#_-fjq#f#
 DEBUG = True
 
 ALLOWED_HOSTS = ['sollicitatieuu.herokuapp.com',
+                 'www.meesvanstiphout.com',
+                 'www.meesvanstiphout.nl',
                  '127.0.0.1']
 
 

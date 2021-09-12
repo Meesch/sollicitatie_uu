@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    {% load static %} <!--very important to include otherwise nothing works from the static folder-->
+    <meta charset="UTF-8">
+    <meta lang="nl">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet"> <!-- Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.17" type="text/css"><!-- Own style CSS file -->
+</head>
+<body>
+<section class = "sub-header-contact"> <!--class for the subheader section of the contact page -->
+    <nav>
+        <a href="{% url 'homepage' %}"> <img src="{% static 'images/logo-uu.png' %}" alt="logo">  </a> <!--add the logo-->
+        <div class="nav-links" id="navLinks"> <!--make a separate class for the navigation buttons-->
+            <i class="fa fa-times" onclick="hideMenu()"></i> <!-- close icon -->
+            <ul> <!-- unordered list -->
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'CV' %}">CV</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+        </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
+    </nav>
+
+    <h1>Contact</h1>
+
+</section>
+
+<section class="contact-me">
+        <div class="contact-col">
+            <p>
+                Bedankt voor het lezen van mijn (erg lange) motivatiebriefwebsite. Ik ben de eerste om toe te geven dat dit project is een beetje uit de hand gelopen, maar ik hoop dat dit laat zien dat ik bereid ben om hard te werken voor deze positie.
+            </p>
+            <p>
+                Ik kijk ernaar uit om binnenkort verder met jullie te praten over de vacature, jullie visie voor de Digital Humanities, en hoe ik zou passen in jullie team. Ik hoop van jullie te horen!
+            </p>
+
+            <p>
+                Met hartelijke groet, <br>Mees van Stiphout
+            </p>
+            <img src="{% static 'images/signature.png' %}" alt="">
+
+        </div>
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                    <span>
+                        <a href="{% url 'CV'%}">Curriculum Vitae</a>
+                        <p>Bekijk hier mijn CV</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <span>
+                        <a href="mailto::meesstip@gmail.com">meesstip@gmail.com</a>
+                        <p>Stuur me een email</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                        <a href="tel:+31624344866" target="_blank">+31 6 24344866</a>
+                        <p>Of bel me!</p>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        </div>
+<!--        <div class="contact-col">-->
+<!--            <form action="">-->
+<!--                <input type="text" placeholder="Enter your name" required>-->
+<!--                <input type="email" placeholder="Enter your email" required>-->
+<!--                <textarea rows="8" placeholder="Message"></textarea>-->
+<!--                <button type="submit" class="hero-btn red-btn">Send Message</button>-->
+<!--            </form>-->
+<!--        </div>-->
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <h1>Aanbevelingen</h1>
+    <div class="testimonial-josje">
+        <div>
+            <img src="{% static 'images/josje_resized.png' %}" alt="">
+        </div>
+        <div>
+            <h3>Dr. J. (Josje) Verhagen, Universiteit van Amsterdam</h3>
+            <p>Dr. Verhagen is mijn belangrijkste begeleider en collega: ik heb de afgelopen twee jaar onderzoek met haar
+            gedaan en zij is mijn huidige supervisor aan de UvA. Ze heeft haar toestemming gegeven om benaderd te worden
+            als mijn primaire referentie.</p>
+            <div class="detail_josje">
+                <i class="fa fa-envelope-o"></i>
+            </div>
+            <div class="detail_josje">
+                <a href="mailto::j.verhagen@uva.nl">j.verhagen@uva.nl</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="testimonial-col">
+            <img src="{% static 'images/elma_resized.png' %}" alt="">
+            <div>
+                <h3>Prof. dr. E. Blom, Universiteit Utrecht</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>"Mees is betrokken bij verschillende onderzoeksprojecten waar ik samen met
+                collega’s aan werk. Hij houdt zich met name bezig met statistiek en dataverwerking.
+                Mees is snel, accuraat en denkt oplossingsgericht. Hij heeft een prettige, open
+                manier van communiceren, kan de meer technische zaken helder uitleggen, en is
+                pro-actief. Wat ik erg prettig vind, is dat Mees bij lastige statistische problemen
+                doorgraaft tot hij een goede oplossing heeft. Hierbij neemt hij feedback van anderen
+                ter harte, vraagt advies waar nodig, en houdt tegelijk ook de voortgang in het vizier.
+                Binnenkort verschijnt dan ook ons eerste gezamenlijke artikel!"
+                </p>
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <img src="{% static 'images/marritvdguchte_resized.png' %}" alt="">
+            <div>
+                <h3>Dr. M. van der Guchte, Universiteit van Amsterdam</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>"Mees is allereerst een prettige persoon om mee samen te werken. Daarnaast werkt hij nauwkeurig en houdt hij zich aan deadlines. Het mooie is dat Mees niet alleen zijn taken uitvoert maar ook echt meedenkt met het onderzoek. In dit geval ging het over het geven van feedback door de docent en het correct gebruik van Engelse grammaticale structuren door vmbo-kader en vwo-3 leerlingen. Mees kan op hoog academisch niveau aan deze inhoudelijke discussies bijdragen omdat hij zowel taalkunde als Engels heeft gestudeerd.  Om deze reden was ik dan ook erg blij dat Mees na de eerste studie ook mee wilde werken aan de tweede studie."</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="testimonial-col">
+            <img src="{% static 'images/jeannetteschaeffer_resized.png' %}" alt="">
+            <div>
+                <h3>Prof. dr. J.C. Schaeffer, Universiteit van Amsterdam</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>"Mees is een van de slimste, nieuwsgierigste, zelfstandigste, en gemotiveerde research master studenten die ik heb begeleid. Daarbij was het gewoon echt leuk om met Mees samen te werken: zijn enthousiasme werkt aanstekelijk, en leidde tot leuke eni interessante gesprekken over niet-linguïstische onderwerpen. Ik geef Mees 5 sterren!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- footer -->
+<section class="footer", id="footer">
+    <div class="icons">
+        <a href="mailto:meesstip@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        <a href="tel:+31624344866" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mees-van-stiphout-688b84138/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="https://soundcloud.com/mace_period" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+    </div>
+</section>
+
+
+<!-- JavaScript for menu toggle -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>

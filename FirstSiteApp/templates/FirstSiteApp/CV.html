@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    {% load static %} <!--very important to include otherwise nothing works from the static folder-->
+    <meta charset="UTF-8">
+    <meta lang="nl">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet"> <!-- Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.15" type="text/css"><!-- Own style CSS file -->
+</head>
+<body class = "CV">
+
+<section class = "sub-header"> <!--class for the subheader section of the contact page -->
+    <nav>
+        <a href="{% url 'homepage' %}"> <img src="{% static 'images/logo-uu.png' %}" alt="logo">  </a> <!--add the logo-->
+        <div class="nav-links" id="navLinks"> <!--make a separate class for the navigation buttons-->
+            <i class="fa fa-times" onclick="hideMenu()"></i> <!-- close icon -->
+            <ul> <!-- unordered list -->
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'CV' %}">CV</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+        </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
+    </nav>
+</section>
+
+<div class="CV_page">
+    <div class="CV_column_1">
+        <section class="profile">
+            <h1>Mees van Stiphout</h1>
+            <p><em>Geesteswetenschapper, Informaticus, Onderzoeker</em></p>
+            <img src="{% static 'images/CV_frontal.jpg' %}" alt="">
+
+        </section>
+
+        <section class="skills">
+            <h2>Programmeervaardigheden</h2>
+            <table>
+                <tr>
+                    <th>Taal/Framework</th>
+                    <th>Vaardigheden</th>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Applicaties zoals een corpus crawler, NLP applicaties.</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>Kwantitatieve analyses zoals lineaire regressie, Item-Response Theory, en Latent Class Analysis.</td>
+                </tr>
+                <tr>
+                    <td>HTML/CSS</td>
+                    <td>Front-end voor webapplicaties zoals deze.</td>
+                </tr>
+                <tr>
+                    <td>Django</td>
+                    <td>Back-end voor webapplicaties zoals deze.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="skills">
+            <h2>Andere Vaardigheden</h2>
+            <ul>
+                <li>Audioproductie / Muziek</li>
+                <li>Ontwerp / Beeldbewerking</li>
+                <li>Tech Support</li>
+                <li>Boekhouden</li>
+                <li>Lesgeven</li>
+            </ul>
+        </section>
+<!--        <section class="skills">-->
+<!--            <h2>Programmeervaardigheden</h2>-->
+<!--                <ul>-->
+<!--                    <li>Python: Gevorderd</li>-->
+<!--                    <li>R: Gevorderd</li>-->
+<!--                    <li>HTML/CSS: Bekwaam</li>-->
+<!--                    <li>Django: Beginner</li>-->
+<!--                    <li>C: Beginner</li>-->
+<!--                </ul>-->
+
+<!--        </section>-->
+
+        <section class="skills">
+            <h2>Publicaties</h2>
+            <ul>
+                <li>Verhagen, Van Stiphout, Blom (2021, in press). Determinants of Early Lexical Acquisition, Effects of Word- and Child-Level Factors on Dutch Children’s Acquisition of Words. <em>Journal of Child Language</em>. </li>
+            </ul>
+
+        </section>
+    </div>
+
+    <div class="CV_column_2">
+        <section class="education">
+            <h2>Educatie</h2>
+            <ul class="timeline">
+                <li class="event">
+                    <span class="duration">2018<br>-<br>2020</span>
+                    <div class="content">
+                        <h3>Research MA Linguistics, Cum Laude</h3>
+                        <p><em>Universiteit van Amsterdam</em></p>
+                        <p>MA Scriptie: “A Psychometric Evaluation of the PPVT-III-NL:  An Item-Based Analysis Using Item Response Theory modelling”</p>
+                    </div>
+                </li>
+
+                <li class="event">
+                    <span class="duration">2014<br>-<br>2018</span>
+                    <div class="content">
+                        <h3>BA English Language and Culture</h3>
+                        <p><em>Universiteit van Amsterdam</em></p>
+                        <p>BA Scriptie: Measuring Intensification Rate Variation Between Genders Using a Generalized Linear Mixed Model”</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2017<br>-<br>2018</span>
+                    <div class="content">
+                        <h3>Minor Computational Science</h3>
+                        <p><em>Universiteit van Amsterdam</em></p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2016<br>-<br>2017</span>
+                    <div class="content">
+                        <h3>BA Linguistics (één jaar)</h3>
+                        <p><em>University of Manchester, Verenigd Koninkrijk</em></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="experience">
+            <h2>Ervaring</h2>
+            <ul class="timeline">
+                <li class="event">
+                    <span class="duration">2020<br>-<br>Heden</span>
+                    <div class="content">
+                        <h3>Onderzoeker</h3>
+                        <p>Universiteit van Amsterdam</p>
+                        <p>Ik ben werkzaam als part-time onderzoeker aan de UvA, waar ik kwantitatief onderzoek doe naar de classificatie van tweetalige kinderen in verschillende profielen als deel van Project MIND. Daarvoor heb ik meegewerkt aan onderzoek naar de factoren die invloed hebben op vroege woordenschatontwikkeling en onderzoek naar de effectiviteit van de PPVT-3-NL. Dit onderzoek is beschreven in een paper dat in November wordt gepubliceerd in het <em>Journal of Child Language.</em></p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2020<br>-<br>Heden</span>
+                    <div class="content">
+                        <h3>Editor</h3>
+                        <p>The Paypers, Amsterdam</p>
+                        <p>The Paypers is een online vakblad voor professionals in ecommerce en Fintech. Mijn werk bestond initieel uit het produceren en redigeren van stukken voor de website, maar tegenwoordig zijn mijn hoofdtaken het overzien van onze online events en webinars en het onderhouden van de CRM backoffice.</p>
+                        <p>Ik heb in de laatste jaren verschillende delen van mijn werk geautomatiseerd, zoals het updaten van ons klantenbestand, analyseren van verkeer op onze website, en het verzamelen van informatie over evenementen in de sector.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2020<br>-<br>2021</span>
+                    <div class="content">
+                        <h3>Onderzoeksassistent</h3>
+                        <p>Universiteit van Amsterdam</p>
+                        <p>Ik heb gewerkt voor Dr. Marrit van der Guchte als assistent voor haar onderzoek naar de ontwikkeling van Engels in Nederlandstalige scholieren als deel van de onderzoeksgroep DoeltaalDigitaal.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2019</span>
+                    <div class="content">
+                        <h3>Onderzoeksassistent</h3>
+                        <p>Universiteit van Amsterdam</p>
+                        <p>In het eerste jaar van mijn Master heb ik gewerkt als onderzoeksassistent in het babylab aan de faculteit Maatschappij en Gedrag. Mijn rol was het uitvoeren van experimenten met 1-jarige peuters en het analyseren van videodata van deze experimenten.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2018<br>-<br>2019</span>
+                    <div class="content">
+                        <h3>Onderzoeksassistent</h3>
+                        <p>Kansas State University, Verenigde Staten</p>
+                        <p>Ik heb een assistentschap aan de faculteit van Applied Human Sciences voltooid in de Verenigde Staten. Dit onderzoek betrof het analyseren van eye-tracking data van jonge kinderen. Mijn rol was het schrijven van een algoritme dat de data kon interpreteren aan de hand van de richtlijnen van het onderzoek en het kwantitatief analyseren van de data.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2018<br>-<br>2019</span>
+                    <div class="content">
+                        <h3>MA Opleidingscommissie</h3>
+                        <p>Universiteit van Amsterdam</p>
+                        <p>Ik heb in de opleidingscommissie van de taalkunde master programma’s aan de UvA gezeten als vice-voorzitter.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2016<br>-<br>2017</span>
+                    <div class="content">
+                        <h3>Onderwijsassistent</h3>
+                        <p>University of Manchester, Verenigd Koninkrijk</p>
+                        <p>Tijdens mijn jaar in Manchester gaf ik Nederlands aan de universiteit als deel van mijn Harting beurs en assisteerde ik de professor in haar werk.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2016<br>-<br>2017</span>
+                    <div class="content">
+                        <h3>Penningmeester</h3>
+                        <p>Studievereniging Etcetera, Amsterdam</p>
+                        <p>Etcetera is de studievereniging van de opleiding Engelse Taal en Cultuur. In 2014-2015 was ik penningmeester en vice-voorzitter van de activiteitencommissie, en het jaar daarop was ik actief als penningmeester en vice-voorzitter van het bestuur.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2016<br>-<br>2017</span>
+                    <div class="content">
+                        <h3>BA Opleidingscommissie</h3>
+                        <p>Universiteit van Amsterdam</p>
+                        <p>Ik heb twee jaar in de opleidingscommissie gezeten voor de Engelse Taal en Cultuur bachelor, waarvan ik het tweede jaar vice-voorzitter was. Daarnaast was ik deel van het Governance Committee, opgericht na de studentenprotesten van 2014 als adviesorgaan voor het herstructureren van het management van de UvA.</p>
+                    </div>
+                </li>
+                <li class="event">
+                    <span class="duration">2016<br>-<br>2017</span>
+                    <div class="content">
+                        <h3>Tutor & Consultant</h3>
+                        <p>Bijlesleraar, Amsterdam</p>
+                        <p>Ik heb anderhalf jaar gewerkt als tutor voor kinderen met leerproblemen en ontwikkelingsproblematiek. Als deel daarvan heb ik twee lesmodules ontworpen, gericht op het halen van het eindexamen wiskunde en M&O voor HAVO en VWO.</p>
+                    </div>
+                </li>
+
+
+            </ul>
+        </section>
+    </div>
+</div>
+
+
+
+
+<!-- footer -->
+<section class="footer", id="footer">
+    <div class="icons">
+        <a href="mailto:meesstip@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        <a href="tel:+31624344866" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mees-van-stiphout-688b84138/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="https://soundcloud.com/mace_period" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+    </div>
+</section>
+
+
+<!-- JavaScript for menu toggle -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>

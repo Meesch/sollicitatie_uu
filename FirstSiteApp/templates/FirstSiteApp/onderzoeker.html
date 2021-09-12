@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    {% load static %} <!--very important to include otherwise nothing works from the static folder-->
+    <meta charset="UTF-8">
+    <meta lang="nl">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>Mees de Onderzoeker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet"> <!-- Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.13" type="text/css"><!-- Own style CSS file -->
+</head>
+<body>
+<section class = "sub-header-oz"> <!--class for the subheader section of the contact page -->
+    <nav>
+        <a href="{% url 'homepage' %}"> <img src="{% static 'images/logo-uu.png' %}" alt="logo">  </a> <!--add the logo-->
+        <div class="nav-links" id="navLinks"> <!--make a separate class for the navigation buttons-->
+            <i class="fa fa-times" onclick="hideMenu()"></i> <!-- close icon -->
+            <ul> <!-- unordered list -->
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'CV' %}">CV</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+        </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
+    </nav>
+
+    <h1>Mees de Onderzoeker</h1>
+</section>
+
+<section class="motivatie_tekst">
+    <p>
+        De onderzoeksmaster taalkunde aan de Universiteit van Amsterdam is een geweldige plek voor mij geweest als onderzoeker. Tijdens mijn master kreeg ik de kans om verschillende onderzoeksprojecten te leren kennen en helpen ontwikkelen. Dit verliep vaak als volgt: ik ging langs bij verschillende onderzoekers en besprak met hen wat voor onderzoek op hun bureau bleef liggen. Dikwijls lag er bij hen dan een methodologische vraag of probleem, zoals ‘hoe kunnen we al deze verschillende data bundelen?’ of ‘werkt deze woordenschattest eigenlijk wel zo goed als we willen?’. Mijn onderzoeksprojecten beginnen daarom vaak bij een methodologisch vraagstuk waar ik een antwoord op moet verzinnen, en ontwikkelen zich daarna verder.
+    <p>
+        Ik heb gemerkt dat ik binnen de geesteswetenschappen vaak bijna vanzelf in een methodologische rol val: ik ben breed geïnteresseerd, maar mijn vaardigheden liggen bij dataverzameling, verwerking, en statistiek. Deze positie geeft me de vrijheid om me aan te sluiten bij een breed scala aan onderzoeken en geeft me zicht op verschillende disciplines. In de laatste drie jaar heb ik onderzoek gedaan in vijf verschillende onderzoeksgroepen: Project MIND (UvA, UU), The Human Development & Family Studies Research Group (Kansas State University), DoeltaalDigitaal (UvA), MyBest Babylab (UvA), en The Institute for Logic, Language, and Computation (UvA). In elke context leer ik iets totaal nieuws en fascinerends, zowel op een inhoudelijk als een methodologisch vlak.
+    </p>
+    <p>
+        Maar pure interesse voor de wetenschap is niet de volledige reden waarom ik graag onderzoek doe. De collegialiteit van de onderzoekers waar ik mee heb gewerkt is een van mijn favoriete onderdelen van onderzoek doen. Prettige samenwerking is een belangrijk aspect van elke baan die ik met plezier heb gehad. Onderaan de home pagina staan aanbevelingen van de onderzoekers waar ik mee heb gewerkt, en ik heb deze verzameling misschien wel tien keer doorgelezen. Het wekt een zekere nostalgie op voor het werk wat ik met deze mensen heb gedaan, maar ook een verlangen om méér van dit werk te doen. Ik geniet van samen met anderen nieuwe inzichten te verkrijgen, om na te denken over ingewikkelde problemen, en te leren van mensen met jaren aan wetenschappelijke ervaring. Ik hoop dat ik dit werk kan voortzetten in het Digital Humanities lab, om meer mensen verder te helpen met hun onderzoek en zo meer te leren dan ik ooit kan doen in één onderzoeksgroep.
+    </p>
+
+</section>
+
+<section class="cta">
+    <a href="{% url 'informaticus' %}" class="hero-btn-left"><< Naar Mees de Informaticus</a>
+    <a href="{% url 'contact' %}" class="hero-btn-right">Naar Contact >></a>
+</section>
+
+<!-- footer -->
+<section class="footer", id="footer">
+    <div class="icons">
+        <a href="mailto:meesstip@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        <a href="tel:+31624344866" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mees-van-stiphout-688b84138/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="https://soundcloud.com/mace_period" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+    </div>
+</section>
+
+<!-- JavaScript for menu toggle -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+</html>

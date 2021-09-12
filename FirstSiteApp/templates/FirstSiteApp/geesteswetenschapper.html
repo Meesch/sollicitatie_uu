@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    {% load static %} <!--very important to include otherwise nothing works from the static folder-->
+    <meta charset="UTF-8">
+    <meta lang="nl">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>Mees de Geesteswetenschapper</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet"> <!-- Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.13" type="text/css"><!-- Own style CSS file -->
+</head>
+
+<body>
+<section class = "sub-header-gw"> <!--class for the subheader section of the contact page -->
+    <nav>
+        <a href="{% url 'homepage' %}"> <img src="{% static 'images/logo-uu.png' %}" alt="logo">  </a> <!--add the logo-->
+        <div class="nav-links" id="navLinks"> <!--make a separate class for the navigation buttons-->
+            <i class="fa fa-times" onclick="hideMenu()"></i> <!-- close icon -->
+            <ul> <!-- unordered list -->
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'CV' %}">CV</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+        </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
+    </nav>
+
+    <h1>Mees de Geesteswetenschapper</h1>
+</section>
+
+<section class="motivatie_tekst">
+    <p>
+        Zoals velen in de gelederen van de geesteswetenschappen, ben ik al vanaf jonge leeftijd geobsedeerd met de verschillende vormen van taal en cultuur: van literatuur tot theater, van muziek tot retoriek, van geschiedenis tot filosofie. Deze interesse leidde bijna vanzelfsprekend er toe dat ik in 2014 Engelse Taal en Cultuur ben gaan studeren aan de Universiteit van Amsterdam. Het academisch achtervolgen van nieuwe ideeën en de finesse van de wetenschappelijke methode grepen me direct, en hebben me sindsdien niet losgelaten.
+    </p>
+    <p>
+        Mijn initiële interesse werd gewekt door de literatuur: mijn ambitie als achttienjarige was om zo veel mogelijk boeken, gedichten, en toneelstukken te lezen in de drie jaar van mijn bachelor. Maar al snel ontwikkelde ik een nieuwe passie: taalkunde. Waar literatuur mijn artistieke kant stimuleerde, sprak taalkunde mijn analytische kant aan, en binnen twee jaar was mijn plan volledig veranderd. Ik stortte mij eerst in forensische taalkunde, daarna digitale natural language processing, toen taalstoornissen, tweetaligheid, en kindertaalontwikkeling.
+    </p>
+    <p>
+       Taal kan mij oneindig boeien: alle aspecten hebben diepe wortels die teruggaan tot de fundamenten van de menselijkheid, en het bestuderen van taal is daarom in mijn optiek een studie naar de kern van mensen. Taalkunde staat zowel tussen verschillende disciplines in als dat het verschillende disciplines omvat: van logica tot pragmatiek, taal beslaat alle hoeken van de wetenschap en cultuur. Dat klinkt allemaal verschrikkelijk romantisch, en mijn excuses daarvoor, maar ik kan niet anders dan enthousiast zijn over dit onderwerp waar ik nu al zeven jaar van mijn leven aan heb besteed.
+    </p>
+    <p>
+        Kortom, ik beschouw mijzelf als een geesteswetenschapper in de dop: ik ben een liefhebber van de kunsten, ik voer graag discussies over filosofie en literatuur, en probeer met een houding van brede interesse en waardering in het leven te staan, maar daarnaast heb ik ook iets te bieden aan de bètakant van de geesteswetenschappen.
+    </p>
+
+</section>
+
+<section class="cta">
+    <a href="{% url 'homepage' %}#drie_mezen" class="hero-btn-left"><< Naar Home</a>
+    <a href="{% url 'informaticus' %}" class="hero-btn-right">Naar Mees de Informaticus >></a>
+</section>
+
+<!-- footer -->
+<section class="footer", id="footer">
+    <div class="icons">
+        <a href="mailto:meesstip@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        <a href="tel:+31624344866" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mees-van-stiphout-688b84138/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="https://soundcloud.com/mace_period" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+    </div>
+</section>
+
+<!-- JavaScript for menu toggle -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+</html>

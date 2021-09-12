@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    {% load static %} <!--very important to include otherwise nothing works from the static folder-->
+    <meta charset="UTF-8">
+    <meta lang="nl">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>Mees van Stiphout - Sollicitatie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet"> <!-- Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.17" type="text/css"><!-- Own style CSS file -->
+</head>
+<body>
+<section class = "header"> <!--class for the header section of the homepage -->
+    <nav>
+        <a href="{% url 'homepage' %}"> <img src="{% static 'images/logo-uu.png' %}" alt="logo">  </a> <!--add the logo-->
+        <div class="nav-links" id="navLinks"> <!--make a separate class for the navigation buttons-->
+            <i class="fa fa-times" onclick="hideMenu()"></i> <!-- close icon -->
+            <ul> <!-- unordered list -->
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'CV' %}">CV</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+        </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
+    </nav>
+
+    <div class="text-box">
+        <h1>Ik zou graag bij jullie werken.</h1>
+        <p>Daarom heb ik deze website gebouwd.</p>
+        <a href="#first_paragraph" class="hero-btn">Lees verder</a> <!-- button -->
+    </div>
+</section>
+
+
+<!-- Section to present three elements in a row -->
+<p id="first_paragraph"></p>
+
+<section class="welkom">
+    <h1>Welkom!</h1>
+    <p>Het is mijn grote genoegen om bij deze mijn sollicitatie in te dienen voor de posities
+        <a href="https://www.uu.nl/organisatie/werken-bij-de-universiteit-utrecht/vacatures/ontwikkelaar-digital-humanities-06-10-fte" target="_blank">Ontwikkelaar</a> of
+        <a href="https://www.uu.nl/organisatie/werken-bij-de-universiteit-utrecht/vacatures/webdeveloper-digital-humanities-06-10-fte" target="_blank">Webdeveloper</a>
+        voor de Digital Humanities aan de Universiteit van Utrecht.
+        Ik kwam de vacature tegen op één van de vele middagen die ik de laatste maanden op vacaturebanken heb doorgebracht.
+        Normaal zou ik een keurige motivatiebrief met mijn CV opsturen en stilletjes bidden bij de telefoon, maar ik
+        wilde graag laten zien dat deze baan mij ontzettend leuk lijkt, en dat ik alles op alles zou zetten om uitgenodigd
+        te worden op een gesprek. En welke manier is beter om te laten zien dat ik een goede aanvulling op het team zou zijn?
+        Ik hoop dat deze vorm van sollicitatie in de smaak valt, maar mocht u toch een voorkeur hebben voor een traditionele brief + CV, dan kun je die
+        <a href="https://drive.google.com/drive/folders/14ceLr2pN9E5JOm53Jpo7oufYziDwvFXq?usp=sharing">hier</a> alsnog downloaden. Als de website niet werkt op uw apparaat, dan kunt u me dat <a href="mailto::meesstip@gmail.com">hier</a> laten weten<a href="#footer" class="asterisk">*</a>.
+        <p>Toen ik een paar weken geleden de vacature voorbij zag komen, was ik gelijk geïnteresseerd. Via de vacature kwam ik bij de Digital Humanities pagina, waar ik mijn ogen uitkeek naar de ambitieuze projecten in jullie portfolio. Ik heb me verloren in
+    <a href="https://zwartsj.home.xs4all.nl/" target="_blank">bijbelse metaforen</a> (mijn vriendin is een religiewetenschapper), jaloers gekeken naar de
+    <a href="http://uudigitalhumanitieslab.github.io/corpus-scraper/" target="_blank">corpus scraper</a> (hoeveel tijd ik had kunnen besparen!), en met verwondering gelezen over de
+    <a href="https://dig.hum.uu.nl/semi-automatic-analysis-of-spontaneous-language-sas-ta/" target="_blank">klinisch-taalkundige toepassingen
+        van digitale oplossingen</a>, iets wat ik altijd heb geambieerd en graag zelf aan zou willen werken. Het lezen van jullie website gaf mij het gevoel dat jullie werk bij de Digital Humanities iets is wat ik al lang wil doen, en tot op zekere hoogte al heb gedaan, maar waarvan ik niet wist dat het mijn werk zou kunnen zijn.</p>
+    </p>
+    <p>
+        Er zijn drie dingen waar ik het over zou willen hebben, die samen de reden vormen waarom ik denk dat ik goed bij jullie team zou aansluiten: mijn interesse in geesteswetenschappen, mijn vaardigheden als informaticus, en mijn ervaring als onderzoeker. Klik op één van mijn portretten om meer te lezen!
+    </p>
+</section>
+
+<section class="drie_mezen" id="drie_mezen">
+
+    <div class="row">
+        <div class="mees-col">
+            <img src="{% static 'images/geesteswetenschapper.jpg' %}" alt="geesteswetenschapper">
+            <div class="layer" onclick="location.href='{% url 'geesteswetenschapper' %}';" style="cursor: pointer;">
+                <a href="{% url 'geesteswetenschapper' %}" class="layover"></a>
+                <h3>Mees de Geesteswetenschapper</h3>
+            </div>
+        </div>
+
+        <div class="mees-col">
+            <img src="{% static 'images/informaticus.jpg' %}" alt="informaticus">
+            <div class="layer" onclick="location.href='{% url 'informaticus' %}';" style="cursor: pointer;">
+                <h3>Mees de Informaticus</h3>
+            </div>
+        </div>
+
+        <div class="mees-col">
+            <img src="{% static 'images/onderzoeker.jpg' %}" alt="onderzoeker">
+            <div class="layer" onclick="location.href='{% url 'onderzoeker' %}';" style="cursor: pointer;">
+                <h3>Mees de Onderzoeker</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <h1>Aanbevelingen</h1>
+    <div class="testimonial-josje">
+        <div>
+            <img src="{% static 'images/josje_resized.png' %}" alt="">
+        </div>
+        <div>
+            <h3>Dr. J. (Josje) Verhagen, Universiteit van Amsterdam</h3>
+            <p>Dr. Verhagen is mijn belangrijkste begeleider en collega: ik heb de afgelopen twee jaar onderzoek met haar
+            gedaan en zij is mijn huidige supervisor aan de UvA. Ze heeft haar toestemming gegeven om benaderd te worden
+            als mijn primaire referentie.</p>
+            <div class="detail_josje">
+                <i class="fa fa-envelope-o"></i>
+            </div>
+            <div class="detail_josje">
+                <a href="mailto::j.verhagen@uva.nl">j.verhagen@uva.nl</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="testimonial-col">
+            <img src="{% static 'images/elma_resized.png' %}" alt="">
+            <div>
+                <h3>Prof. dr. E. Blom, Universiteit Utrecht</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>"Mees is betrokken bij verschillende onderzoeksprojecten waar ik samen met
+                collega’s aan werk. Hij houdt zich met name bezig met statistiek en dataverwerking.
+                Mees is snel, accuraat en denkt oplossingsgericht. Hij heeft een prettige, open
+                manier van communiceren, kan de meer technische zaken helder uitleggen, en is
+                pro-actief. Wat ik erg prettig vind, is dat Mees bij lastige statistische problemen
+                doorgraaft tot hij een goede oplossing heeft. Hierbij neemt hij feedback van anderen
+                ter harte, vraagt advies waar nodig, en houdt tegelijk ook de voortgang in het vizier.
+                Binnenkort verschijnt dan ook ons eerste gezamenlijke artikel!"
+                </p>
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <img src="{% static 'images/marritvdguchte_resized.png' %}" alt="">
+            <div>
+                <h3>Dr. M. van der Guchte, Universiteit van Amsterdam</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>"Mees is allereerst een prettige persoon om mee samen te werken. Daarnaast werkt hij nauwkeurig en houdt hij zich aan deadlines. Het mooie is dat Mees niet alleen zijn taken uitvoert maar ook echt meedenkt met het onderzoek. In dit geval ging het over het geven van feedback door de docent en het correct gebruik van Engelse grammaticale structuren door vmbo-kader en vwo-3 leerlingen. Mees kan op hoog academisch niveau aan deze inhoudelijke discussies bijdragen omdat hij zowel taalkunde als Engels heeft gestudeerd.  Om deze reden was ik dan ook erg blij dat Mees na de eerste studie ook mee wilde werken aan de tweede studie."</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="testimonial-col">
+            <img src="{% static 'images/jeannetteschaeffer_resized.png' %}" alt="">
+            <div>
+                <h3>Prof. dr. J.C. Schaeffer, Universiteit van Amsterdam</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>"Mees is een van de slimste, nieuwsgierigste, zelfstandigste, en gemotiveerde research master studenten die ik heb begeleid. Daarbij was het gewoon echt leuk om met Mees samen te werken: zijn enthousiasme werkt aanstekelijk, en leidde tot leuke eni interessante gesprekken over niet-linguïstische onderwerpen. Ik geef Mees 5 sterren!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+    <a href="" class="hero-btn">CONTACT</a>
+</section>
+
+<!-- footer -->
+<section class="footer", id="footer">
+    <p><a href="#first_paragraph" class="asterisk">*</a>De website zou het in principe moeten doen op telefoons, tablets, en computers, maar ik hoef jullie niet te vertellen dat de verwachtingen van de ontwikkelaar en de realiteit van de software helaas niet altijd overeen komen.</p>
+    <div class="icons">
+        <a href="mailto:meesstip@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        <a href="tel:+31624344866" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mees-van-stiphout-688b84138/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="https://soundcloud.com/mace_period" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+    </div>
+</section>
+
+
+<!-- JavaScript for menu toggle -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</body>
+</html>

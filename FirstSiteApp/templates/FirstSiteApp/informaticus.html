@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    {% load static %} <!--very important to include otherwise nothing works from the static folder-->
+    <meta charset="UTF-8">
+    <meta lang="nl">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>Mees de Informaticus</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet"> <!-- Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=1.13" type="text/css"><!-- Own style CSS file -->
+</head>
+<body>
+<section class = "sub-header-it"> <!--class for the subheader section of the contact page -->
+    <nav>
+        <a href="{% url 'homepage' %}"> <img src="{% static 'images/logo-uu.png' %}" alt="logo">  </a> <!--add the logo-->
+        <div class="nav-links" id="navLinks"> <!--make a separate class for the navigation buttons-->
+            <i class="fa fa-times" onclick="hideMenu()"></i> <!-- close icon -->
+            <ul> <!-- unordered list -->
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'CV' %}">CV</a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            </ul>
+        </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i> <!-- menu icon -->
+    </nav>
+
+    <h1>Mees de Informaticus</h1>
+</section>
+
+<section class="motivatie_tekst">
+    <p>
+        In 2016-2017 heb ik een jaar aan de Universiteit van Manchester gestudeerd, waar ik me volledig aan taalkunde heb gewijd en mijn eerste stappen als onderzoeker en informaticus heb gezet. Ik heb daar mijn eerste taalkundige software gebouwd: een POS-tagger met als doelstelling om op forensische wijze auteurschap aan te tonen. Het idee dat een computer gebruikt kan worden om taalkundige vragen te beantwoorden was fascinerend, en iets wat ik zelf onmiddellijk wilde leren. Mijn docent gaf me daarom het volgende advies, dat ik sindsdien tot op de letter heb gevolgd: als je jezelf wilt ontwikkelen als programmeur, zorg dat je elk onderzoek iets nieuws leert programmeren.    </p>
+    <p>
+        In Manchester werd het al snel duidelijk dat als ik mijn ambitie om te programmeren wilde volgen, ik gebaat zou zijn bij wat formeel onderwijs op dat gebied. Daarom heb ik het jaar daarop een minor Computationele Wetenschappen gevolgd op Amsterdam Science Park, waar ik mijn C en Python vaardigheden heb ontwikkeld en verschillende natural language processing vakken heb gevolgd. Maar ik leerde iets anders, misschien nog belangrijker dan de programmeerkennis: ik leerde naar problemen te kijken als een informaticus. Alle vraagstukken krijgen andere dimensies als je weet wat er mogelijk (en niet mogelijk) is met een computer, en dat inzicht was iets zeldzaams en bruikbaars op de faculteit van de geesteswetenschappen aan de UvA.
+    </p>
+    <p>
+        Ik schreef voor mijn bachelorscriptie een corpus crawler, en werd mede door mijn ideeën over digitaal onderzoek aangenomen voor de onderzoeksmaster Linguistics aan de UvA, waar ik de kans kreeg om mijn digitale vaardigheden en ideeën toe te passen op praktijkgericht taalkundig onderzoek.
+    </p>
+    <p>
+        Ik heb geen volledige opleiding op het gebied van informatica genoten, en mijn programmeervaardigheden zijn dus waarschijnlijk niet zo ontwikkeld als iemand die de laatste zes jaar alleen maar code heeft geschreven. Dikwijls ben ik de enige in een onderzoeksgroep met programmeerervaring, en de enige feedback die ik krijg op mijn software komt van mijn vrienden en collega’s uit de informatica. Maar ik leer snel, ik leer graag, en ik heb een account op StackOverflow. Eén van de dingen waar ik het meest door ben getrokken aan deze baan is de kans om verder te ontwikkelen als programmeur, en ik sta te popelen om van jullie te leren.
+    </p>
+
+</section>
+
+<section class="cta">
+    <a href="{% url 'geesteswetenschapper' %}" class="hero-btn-left"><< Naar Mees de Geesteswetenschapper</a>
+    <a href="{% url 'onderzoeker' %}" class="hero-btn-right">Naar Mees de Onderzoeker >></a>
+</section>
+
+<!-- footer -->
+<section class="footer", id="footer">
+    <div class="icons">
+        <a href="mailto:meesstip@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        <a href="tel:+31624344866" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mees-van-stiphout-688b84138/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="https://soundcloud.com/mace_period" target="_blank"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+    </div>
+</section>
+
+
+<!-- JavaScript for menu toggle -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+</html>
